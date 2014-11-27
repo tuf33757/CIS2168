@@ -137,10 +137,30 @@ public class IntColl6
             how_many--;
         }
     }
-public void OmitGreater (int i){
-        btNode p = c;
-        btNode prev = null;
-        btNode q = c;
+    
+     public void OmitGreater(int i){
+       btNode prev = null, p=c;
+       if (p!=null){
+           while((p!=null)&&(p.info == i)){
+               prev =p;
+               p = p.right;}
+           if (prev==null){
+               while((p!=null)&&(p.info > i)){
+                   p = p.left;
+               }
+               if (p!=null){
+                   p.right = null;
+                   c=p;}
+               else{
+                   prev.right = null;}
+               }
+           }
+       }
+   
+//public void OmitGreater (int i){
+       // btNode p = c;
+        //btNode prev = null;
+       // btNode q = c;
 //        while(p!=null && p.info!=i) {
 //            prev = p;
 //            if(p.info < i)
@@ -155,26 +175,26 @@ public void OmitGreater (int i){
 //           
 //        }
         
-	while(p!=null) {
+//	while(p!=null) {
 		
-        if (i == p.info){
-		break;}
+        //if (i == p.info){
+	//	break;}
 
-        if(i < p.info){
-            prev = p;
-            p = p.l;
-             if (p.info < i){
-            	p = prev;
-            	break;}
-        }
+      //  if(i < p.info){
+      //      prev = p;
+      //      p = p.l;
+      //       if (p.info < i){
+       //     	p = prev;
+       //     	break;}
+      //  }
 
-       if (i>p.info){
+      // if (i>p.info){
            	
-           prev = p;   	
-            p = p.r;
-       if (p.info > i){
-            	p = prev;
-            	break;}}
+     //      prev = p;   	
+        //    p = p.r;
+    //   if (p.info > i){
+        //    	p = prev;
+       //     	break;}}
        
        
 
@@ -183,32 +203,11 @@ public void OmitGreater (int i){
 //            	break;}
 
            // prev = p;
-    }
-if (prev==null){
-    p.r = null;}
-else{
-    if (prev.l == p){
-    	prev.r = null;
-    	c=p;}
-
-    while(q!=null) {
-
-        if(p.info >= q.info){
-            q=p;
-            q.r=null;
-        	prev.r=q;
-                break;}
-        else {       	
-            q = q.r;
-
-            if (q.info >= p.info)
-            	prev.r = p;
-
-            prev = q;
-    }}
-
-}}
-    // Returns amount of ints stored in collection
+   // }
+//if (prev==null){
+//    p.r = null;}
+//else
+ /  // Returns amount of ints stored in collection
     public int get_howmany()
     {
         return how_many;
