@@ -1,5 +1,5 @@
 //*********************************************************************
-// FILE NAME    : Stringcoll.java
+// FILE NAME    : Stringcoll.java test stuff out
 // DESCRIPTION  : This file contains the class Stringcoll.
 //*********************************************************************
 package stringcoll;
